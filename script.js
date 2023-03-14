@@ -21,16 +21,34 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // Write generate password function
+function generatePassword() {
   // Create and empty array to store character sets
+  var possibleChoices = [];
   // Prompt user to input password length; make sure input is between 8-128 characters
+  var passwordLength = prompt("How many characters do you want your password to be?");
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Your password can only be between 8 and 128 characters.");
+    return;
+  }
 
-// Create confirm prompts for each character set and assign them as a variable
+  // Create confirm prompts for each character set and assign them as a variable
+  var wantsUpperCase = confirm("Do you want your password to include uppercase letters?");
+  var wantsLowerCase = confirm("Do you want your password to include lowercase letters?");
+  var wantsSpecial = confirm("Do you want your password to include special characters?");
+  var wantsNumbers = confirm("Do you want your password to include numbers?");
 
-// Make sure users select at least one character set
+  // Make sure users select at least one character set
 
-// Add selected character sets to array of possible characters
+  // Add selected character sets to array of possible characters
 
-// For the inputted password length, pick a random character from possible characters array 
+  // For the inputted password length, pick a random character from possible characters array 
 
-// Display randomly generated password
+  // Display randomly generated password
+}
+  
+  
+
+
+
+
 
