@@ -38,12 +38,37 @@ function generatePassword() {
   var wantsNumbers = confirm("Do you want your password to include numbers?");
 
   // Make sure users select at least one character set
+  if (!wantsUpperCase && !wantsLowerCase && !wantsNumbers && !wantsSpecial) {
+    alert("You must select at least one character type.");
+    return;
+  }
 
   // Add selected character sets to array of possible characters
+  if (wantsLowerCase) {
+    possibleChoices = possibleChoices.concat(lowerCase);
+  }
+
+  if (wantsUpperCase) {
+    possibleChoices = possibleChoices.concat(upperCase);
+  }
+
+  if (wantsNumbers) {
+    possibleChoices = possibleChoices.concat(numbers);
+  }
+
+  if (wantsSpecial) {
+    possibleChoices = possibleChoices.concat(special);
+  }
 
   // For the inputted password length, pick a random character from possible characters array 
+  var password = "";
+  for (i = 0; i < passwordLength; i++) {
+    var randomChar = possibleChoices[Math.floor(Math.random()*possibleChoices.length)];
+    password += randomChar;
+  }
 
   // Display randomly generated password
+  return password;
 }
   
   
